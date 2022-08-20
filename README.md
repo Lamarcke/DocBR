@@ -4,10 +4,13 @@ Essa biblioteca permite que você valide documentos brasileiros facilmente.
 
 *Por enquanto, apenas a validação de CPF foi implementada.*
 
+## Instalação
+Basta clonar o repositório para o seu projeto, e manter apenas o pacote `org.docbr`.
+
 ## Classes
 `CPF(String cpf)`  
 
-Recebe uma `string` equivalente a um CPF e o valida automaticamente.
+Recebe uma `string` equivalente a um CPF e o valida automaticamente.  
 **Uso**:
 ```java
 import org.docbr.CPF;
