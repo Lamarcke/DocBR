@@ -5,7 +5,9 @@ Essa biblioteca permite que você valide documentos brasileiros facilmente.
 *Por enquanto, apenas a validação de CPF foi implementada.*
 
 ## Instalação
-Basta clonar o repositório para o seu projeto, e manter apenas o pacote `org.docbr`.
+Basta clonar o repositório para o seu projeto, e manter apenas o pacote `org.docbr`.  
+
+Ou baixe os arquivos manualmente na aba de `Releases`.
 
 ## Classes
 `CPF(String cpf)`  
