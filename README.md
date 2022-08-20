@@ -5,7 +5,8 @@ Essa biblioteca permite que você valide documentos brasileiros facilmente.
 *Por enquanto, apenas a validação de CPF foi implementada.*
 
 ## Classes
-`CPF(String cpf)`
+`CPF(String cpf)`  
+
 Recebe uma `string` equivalente a um CPF e valida automaticamente se ele é válido.
 **Uso**:
 ```java
