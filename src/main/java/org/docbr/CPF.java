@@ -3,15 +3,33 @@ package org.docbr;
 import java.util.InputMismatchException;
 
 public class CPF{
-    private final String cpf;
+    private String cpf;
 
 
     public CPF(String cpf){
+        boolean repeatedCPF = true;
+
         final int firstDigitIndex = 9, secondDigitIndex = 10;
         this.cpf = cpf;
+
         if (this.cpf.length() != 11){
             throw new InputMismatchException("CPF inválido.");
         }
+
+        for (int i = 0; i < this.cpf.length(); i++) {
+            if (this.cpf.charAt(i) != this.cpf.charAt(i + 1)) {
+                repeatedCPF = false;
+                break;
+            }
+        }
+        if (repeatedCPF){
+            throw new InputMismatchException("CPF inválido.");
+        }
+
+        if (this.cpf.contains(".") || this.cpf.contains("-")){
+            this.cpf = this.cpf.replace(".", "");
+        }
+
         if (isVDInvalid(firstDigitIndex) || isVDInvalid(secondDigitIndex)){
             throw new InputMismatchException("Verificação de CPF falhou.");
         }
