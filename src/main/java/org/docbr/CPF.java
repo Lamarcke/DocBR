@@ -6,13 +6,15 @@ public class CPF{
     private String cpf;
 
 
-    public CPF(String cpf){
+    public CPF(String cpf) throws InputMismatchException{
         boolean repeatedCPF = true;
 
         final int firstDigitIndex = 9, secondDigitIndex = 10;
         this.cpf = cpf;
 
-        if (this.cpf.length() != 11){
+        if (this.cpf.length() != 11 && this.cpf.length() != 14){
+            throw new InputMismatchException("CPF inválido.");
+        } else if (this.cpf.length() == 14 && !this.cpf.contains(".") && !this.cpf.contains("-")){
             throw new InputMismatchException("CPF inválido.");
         }
 
@@ -27,7 +29,7 @@ public class CPF{
         }
 
         if (this.cpf.contains(".") || this.cpf.contains("-")){
-            this.cpf = this.cpf.replace(".", "");
+            this.cpf = this.cpf.replace(".", "").replace("-", "");
         }
 
         if (isVDInvalid(firstDigitIndex) || isVDInvalid(secondDigitIndex)){
